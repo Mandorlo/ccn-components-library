@@ -1,0 +1,98 @@
+:host {
+    --me-button-width: 100px;
+    --me-button-height: 50px;
+    --me-button-color: black;
+    --me-button-color-hover: white;
+}
+
+:host([disabled]) { /* style when host has disabled attribute. */
+    pointer-events: none;
+}
+
+:host([disabled]) .root {
+    background: #ddd;
+    color: gray;
+}
+
+.root {
+    width: var(--me-button-width);
+    height: var(--me-button-height);
+    background: #f4db5e;
+    border-radius: var(--me-button-border-radius, 0);
+    box-shadow: var(--me-button-box-shadow, none);
+  }
+  
+  button {
+      position: absolute;
+      z-index: 3;
+      width: var(--me-button-width);
+      height: var(--me-button-height);
+      background: none;
+      border: var(--me-button-border, none);
+      border-radius: var(--me-button-border-radius, 0);
+      cursor: pointer;
+      padding: 0;
+      color: var(--me-button-color);
+      
+  }
+  
+  button:focus {
+      outline:0;
+  }
+
+  .slide {
+    background: rgb(61, 50, 44);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+    border-radius: var(--me-button-border-radius, 0);
+  }
+  
+  .root:hover .slide {
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+  }
+
+  .root:hover .slide_tb {
+    height: var(--me-button-height);
+  }
+
+  .root:hover .slide_bt {
+    height: var(--me-button-height);
+    margin-top: 0px;
+  }
+
+  .root:hover .slide_lr {
+    width: var(--me-button-width);
+  }
+
+  .root:hover .slide_rl {
+    width: var(--me-button-width);
+    margin-left: 0px;
+  }
+
+  .root:hover button {
+    color: var(--me-button-color-hover);
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+  }
+
+  .slide_tb {
+    width: var(--me-button-width);
+    height: 0px;
+  }
+
+  .slide_bt {
+    width: var(--me-button-width);
+    height: 0px;
+    margin-top: var(--me-button-height);
+  }
+
+  .slide_lr {
+    height: var(--me-button-height);
+    width: 0px;
+  }
+
+  .slide_rl {
+    height: var(--me-button-height);
+    width: 0px;
+    margin-left: var(--me-button-width);
+  }
