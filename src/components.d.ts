@@ -12,10 +12,10 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MeButton {
+  interface CcnButtonSlide {
     'direction': string;
   }
-  interface MeButtonAttributes extends StencilHTMLAttributes {
+  interface CcnButtonSlideAttributes extends StencilHTMLAttributes {
     'direction'?: string;
   }
 
@@ -33,20 +33,20 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'MeButton': Components.MeButton;
+    'CcnButtonSlide': Components.CcnButtonSlide;
     'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
-    'me-button': Components.MeButtonAttributes;
+    'ccn-button-slide': Components.CcnButtonSlideAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
 
-  interface HTMLMeButtonElement extends Components.MeButton, HTMLStencilElement {}
-  var HTMLMeButtonElement: {
-    prototype: HTMLMeButtonElement;
-    new (): HTMLMeButtonElement;
+  interface HTMLCcnButtonSlideElement extends Components.CcnButtonSlide, HTMLStencilElement {}
+  var HTMLCcnButtonSlideElement: {
+    prototype: HTMLCcnButtonSlideElement;
+    new (): HTMLCcnButtonSlideElement;
   };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -56,12 +56,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'me-button': HTMLMeButtonElement
+    'ccn-button-slide': HTMLCcnButtonSlideElement
     'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
-    'me-button': HTMLMeButtonElement;
+    'ccn-button-slide': HTMLCcnButtonSlideElement;
     'my-component': HTMLMyComponentElement;
   }
 

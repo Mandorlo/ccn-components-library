@@ -1,0 +1,98 @@
+:host {
+    --ccn-button-width: 100px;
+    --ccn-button-height: 50px;
+    --ccn-button-color: black;
+    --ccn-button-color-hover: white;
+}
+
+:host([disabled]) { /* style when host has disabled attribute. */
+    pointer-events: none;
+}
+
+:host([disabled]) .root {
+    background: #ddd;
+    color: gray;
+}
+
+.root {
+    width: var(--ccn-button-width);
+    height: var(--ccn-button-height);
+    background: #f4db5e;
+    border-radius: var(--ccn-button-border-radius, 0);
+    box-shadow: var(--ccn-button-box-shadow, none);
+  }
+  
+  button {
+      position: absolute;
+      z-index: 3;
+      width: var(--ccn-button-width);
+      height: var(--ccn-button-height);
+      background: none;
+      border: var(--ccn-button-border, none);
+      border-radius: var(--ccn-button-border-radius, 0);
+      cursor: pointer;
+      padding: 0;
+      color: var(--ccn-button-color);
+      
+  }
+  
+  button:focus {
+      outline:0;
+  }
+
+  .slide {
+    background: rgb(61, 50, 44);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+    border-radius: var(--ccn-button-border-radius, 0);
+  }
+  
+  .root:hover .slide {
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+  }
+
+  .root:hover .slide_tb {
+    height: var(--ccn-button-height);
+  }
+
+  .root:hover .slide_bt {
+    height: var(--ccn-button-height);
+    margin-top: 0px;
+  }
+
+  .root:hover .slide_lr {
+    width: var(--ccn-button-width);
+  }
+
+  .root:hover .slide_rl {
+    width: var(--ccn-button-width);
+    margin-left: 0px;
+  }
+
+  .root:hover button {
+    color: var(--ccn-button-color-hover);
+    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
+  }
+
+  .slide_tb {
+    width: var(--ccn-button-width);
+    height: 0px;
+  }
+
+  .slide_bt {
+    width: var(--ccn-button-width);
+    height: 0px;
+    margin-top: var(--ccn-button-height);
+  }
+
+  .slide_lr {
+    height: var(--ccn-button-height);
+    width: 0px;
+  }
+
+  .slide_rl {
+    height: var(--ccn-button-height);
+    width: 0px;
+    margin-left: var(--ccn-button-width);
+  }

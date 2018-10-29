@@ -1,8 +1,8 @@
 import { Component, Prop, Element } from '@stencil/core';
 
 @Component({
-  tag: 'me-button',
-  styleUrl: 'me-button.css',
+  tag: 'ccn-button-slide',
+  styleUrl: 'ccn-button-slide.css',
   shadow: true
 })
 export class MeButton {
