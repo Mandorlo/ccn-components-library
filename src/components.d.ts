@@ -18,28 +18,15 @@ export namespace Components {
   interface CcnButtonSlideAttributes extends StencilHTMLAttributes {
     'direction'?: string;
   }
-
-  interface MyComponent {
-    'first': string;
-    'last': string;
-    'middle': string;
-  }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    'first'?: string;
-    'last'?: string;
-    'middle'?: string;
-  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'CcnButtonSlide': Components.CcnButtonSlide;
-    'MyComponent': Components.MyComponent;
   }
 
   interface StencilIntrinsicElements {
     'ccn-button-slide': Components.CcnButtonSlideAttributes;
-    'my-component': Components.MyComponentAttributes;
   }
 
 
@@ -49,20 +36,12 @@ declare global {
     new (): HTMLCcnButtonSlideElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
   interface HTMLElementTagNameMap {
     'ccn-button-slide': HTMLCcnButtonSlideElement
-    'my-component': HTMLMyComponentElement
   }
 
   interface ElementTagNameMap {
     'ccn-button-slide': HTMLCcnButtonSlideElement;
-    'my-component': HTMLMyComponentElement;
   }
 
 

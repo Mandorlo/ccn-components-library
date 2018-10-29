@@ -1,7 +1,8 @@
 {
-  "name": "my-component",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "name": "ccn-web-components",
+  "version": "0.0.3",
+  "description": "Stencil Web Components for the Communauté du Chemin Neuf Websites",
+  "keywords": ["ccn", "web component", "stencil"],
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -21,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/Mandorlo/ccn-components-library"
   },
-  "author": "Ionic Team",
+  "author": "Mandorlo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/Mandorlo/ccn-components-library"
   },
-  "homepage": "https://github.com/ionic-team/stencil"
+  "homepage": "https://github.com/Mandorlo/ccn-components-library"
 }

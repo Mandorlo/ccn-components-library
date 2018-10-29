@@ -5,7 +5,7 @@ import { Component, Prop, Element } from '@stencil/core';
   styleUrl: 'ccn-button-slide.css',
   shadow: true
 })
-export class MeButton {
+export class CcnButtonSlide {
   @Prop() direction: string = 'tb';
 
   @Element() rootEl: HTMLElement;
