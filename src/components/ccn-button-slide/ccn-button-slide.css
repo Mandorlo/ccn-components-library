@@ -3,6 +3,12 @@
     --ccn-button-height: 50px;
     --ccn-button-color: black;
     --ccn-button-color-hover: white;
+    --ccn-button-bg-color-disabled: gray;
+    --ccn-button-bg-color: #fde7de;
+    --ccn-button-color-slide1: #9E4232;
+    --ccn-button-color-slide2: #C1573C;
+    --ccn-button-animation-duration1: 0.25s;
+    --ccn-button-animation-duration2: 0.4s;
 }
 
 :host([disabled]) { /* style when host has disabled attribute. */
@@ -11,88 +17,100 @@
 
 :host([disabled]) .root {
     background: #ddd;
-    color: gray;
+    color: var(--ccn-button-bg-color-disabled);
 }
 
 .root {
-    width: var(--ccn-button-width);
-    height: var(--ccn-button-height);
-    background: #f4db5e;
-    border-radius: var(--ccn-button-border-radius, 0);
-    box-shadow: var(--ccn-button-box-shadow, none);
-  }
-  
-  button {
-      position: absolute;
-      z-index: 3;
-      width: var(--ccn-button-width);
-      height: var(--ccn-button-height);
-      background: none;
-      border: var(--ccn-button-border, none);
-      border-radius: var(--ccn-button-border-radius, 0);
-      cursor: pointer;
-      padding: 0;
-      color: var(--ccn-button-color);
-      
-  }
-  
-  button:focus {
-      outline:0;
-  }
+  width: var(--ccn-button-width);
+  height: var(--ccn-button-height);
+  background: var(--ccn-button-bg-color);
+  border-radius: var(--ccn-button-border-radius, 0);
+  box-shadow: var(--ccn-button-box-shadow, none);
+}
 
-  .slide {
-    background: rgb(61, 50, 44);
-    position: absolute;
-    z-index: 1;
-    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
-    border-radius: var(--ccn-button-border-radius, 0);
-  }
-  
-  .root:hover .slide {
-    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
-  }
+button {
+  position: absolute;
+  z-index: 3;
+  width: var(--ccn-button-width);
+  height: var(--ccn-button-height);
+  background: none;
+  border: var(--ccn-button-border, none);
+  border-radius: var(--ccn-button-border-radius, 0);
+  cursor: pointer;
+  padding: 0;
+  color: var(--ccn-button-color);
+}
 
-  .root:hover .slide_tb {
-    height: var(--ccn-button-height);
-  }
+button:focus {
+  outline:0;
+}
 
-  .root:hover .slide_bt {
-    height: var(--ccn-button-height);
-    margin-top: 0px;
-  }
+.slide {
+  background: var(--ccn-button-color-slide1);
+  position: absolute;
+  z-index: 1;
+  transition: all var(--ccn-button-animation-duration2) cubic-bezier(.37,.01,0,.98);
+  border-radius: var(--ccn-button-border-radius, 0);
+}
 
-  .root:hover .slide_lr {
-    width: var(--ccn-button-width);
-  }
+.slide2 {
+  background: var(--ccn-button-color-slide2);
+  position: absolute;
+  top: -var(--ccn-button-height);
+  z-index: 1;
+  transition: all var(--ccn-button-animation-duration1) cubic-bezier(.37,.01,0,.98);
+  border-radius: var(--ccn-button-border-radius, 0);
+}
 
-  .root:hover .slide_rl {
-    width: var(--ccn-button-width);
-    margin-left: 0px;
-  }
+.root:hover .slide {
+  transition: all var(--ccn-button-animation-duration1) cubic-bezier(.37,.01,0,.98);
+}
 
-  .root:hover button {
-    color: var(--ccn-button-color-hover);
-    transition: all 0.4s cubic-bezier(.37,.01,0,.98);
-  }
+.root:hover .slide2 {
+  transition: all var(--ccn-button-animation-duration2) cubic-bezier(.37,.01,0,.98);
+}
 
-  .slide_tb {
-    width: var(--ccn-button-width);
-    height: 0px;
-  }
+.root:hover .slide_tb {
+  height: var(--ccn-button-height);
+}
 
-  .slide_bt {
-    width: var(--ccn-button-width);
-    height: 0px;
-    margin-top: var(--ccn-button-height);
-  }
+.root:hover .slide_bt {
+  height: var(--ccn-button-height);
+  margin-top: 0px;
+}
 
-  .slide_lr {
-    height: var(--ccn-button-height);
-    width: 0px;
-  }
+.root:hover .slide_lr {
+  width: var(--ccn-button-width);
+}
 
-  .slide_rl {
-    height: var(--ccn-button-height);
-    width: 0px;
-    margin-left: var(--ccn-button-width);
-  }
+.root:hover .slide_rl {
+  width: var(--ccn-button-width);
+  margin-left: 0px;
+}
+
+.root:hover button {
+  color: var(--ccn-button-color-hover);
+  transition: all var(--ccn-button-animation-duration2) cubic-bezier(.37,.01,0,.98);
+}
+
+.slide_tb {
+  width: var(--ccn-button-width);
+  height: 0px;
+}
+
+.slide_bt {
+  width: var(--ccn-button-width);
+  height: 0px;
+  margin-top: var(--ccn-button-height);
+}
+
+.slide_lr {
+  height: var(--ccn-button-height);
+  width: 0px;
+}
+
+.slide_rl {
+  height: var(--ccn-button-height);
+  width: 0px;
+  margin-left: var(--ccn-button-width);
+}
