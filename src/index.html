@@ -8,19 +8,70 @@
   <!-- <script src='https://unpkg.com/ccn-web-components@0.0.1/dist/mycomponent.js'></script> -->
 
   <style>
+    body {
+      /* display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10vh; */
+    }
     ccn-button-slide {
       --ccn-button-border: 1px solid gray;
       --ccn-button-width: 170px;
       --ccn-button-height: 70px;
     }
+
+    ccn-bg-video {
+      --ccn-bg-video-fit: cover; /* cover | contain | fill | scale-down */
+      background-color: rgb(70, 70, 70);
+      width: 60vw;
+      height: 40vh;
+    }
+    div.me-bg-video {
+      opacity:0;width:100%;height:100%;display:flex;align-items: center;justify-content: center;
+      transition: opacity 0.3s ease-in;
+    }
+    ccn-bg-video:hover > div.me-bg-video {
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+
+    ccn-bouncing.me {
+      --ccn-bounce-duration: 0.5s;
+      --ccn-bounce-count: 2;
+    }
   </style>
 </head>
 <body>
 
-  <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
-  <ccn-button-slide class="me" onclick="alert('coco')" direction="bt">Lodate il Signore !</ccn-button-slide>
-  <br>
-  <ccn-button-slide class="me" onclick="alert('coco')" direction="lr">Lodate il Signore !</ccn-button-slide>
+  <!-- ========== CCN-IMG-REVEAL ============== -->
+  <ccn-img-reveal src="https://tympanus.net/Tutorials/3DHoverEffects/images/5.jpg" width="300px" height="200px">
+    <div style="background:red;text-align: right">coco</div>
+  </ccn-img-reveal>
+  <!-- <ccn-img-reveal src="https://www.chemin-neuf.fr/dam?media-id=57222370c445ec9d598c3d84&width=900&mode=boxed" 
+    width="400px" height="300px"></ccn-img-reveal> -->
+  <!-- <ccn-img-reveal src="https://portage.savoirfaire.fr/wp-content/uploads/sites/2/2015/04/martin-schoeller-barack-obama-portrait.jpeg"
+    style="--ccn-root-width:100px;--ccn-root-height:70px;"></ccn-img-reveal> -->
+
+  <!-- ========== CCN-BUTTON-SLIDE ============== -->
+  <!-- <ccn-button-slide class="me" onclick="alert('coco')" direction="bt">Lodate il Signore !</ccn-button-slide> -->
+  
+
+  <!-- <ccn-div-deform>Benedetto sia il nome di Gesù</ccn-div-deform> -->
+
+  <!-- ========== CCN-BOUNCING ============== -->
+  <!-- <ccn-bouncing width="50px" height="50px" trigger="hover" deform-position="b" gravity="b">
+    <div style="width:100%;height:100%;background:blue;border-radius:50%;"></div>
+  </ccn-bouncing> -->
+  <!-- <ccn-bouncing class="me" width="25px" height="25px" bounce-length="20px" deform-strength="15%">
+    <div style="width:100%;height:100%;background:green;"></div>
+  </ccn-bouncing> -->
+
+  <!-- ========== CCN-BG-VIDEO ============== -->
+  <!-- <ccn-bg-video>
+    <div class="me-bg-video">
+      <div style="color:white">Benedetto sia il nome di Gesù</div>
+    </div>
+  </ccn-bg-video> -->
 
 </body>
 </html>

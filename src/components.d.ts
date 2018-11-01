@@ -12,23 +12,97 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface CcnBgVideo {
+    'height': string;
+    'poster': string;
+    'video': string;
+    'width': string;
+  }
+  interface CcnBgVideoAttributes extends StencilHTMLAttributes {
+    'height'?: string;
+    'poster'?: string;
+    'video'?: string;
+    'width'?: string;
+  }
+
+  interface CcnBouncing {
+    'bounceLength': string;
+    'debug': string;
+    'deformPosition': string;
+    'deformStrength': string;
+    'gravity': string;
+    'height': string;
+    'trigger': string;
+    'width': string;
+  }
+  interface CcnBouncingAttributes extends StencilHTMLAttributes {
+    'bounceLength'?: string;
+    'debug'?: string;
+    'deformPosition'?: string;
+    'deformStrength'?: string;
+    'gravity'?: string;
+    'height'?: string;
+    'trigger'?: string;
+    'width'?: string;
+  }
+
   interface CcnButtonSlide {
     'direction': string;
   }
   interface CcnButtonSlideAttributes extends StencilHTMLAttributes {
     'direction'?: string;
   }
+
+  interface CcnDivDeform {
+    'direction': string;
+  }
+  interface CcnDivDeformAttributes extends StencilHTMLAttributes {
+    'direction'?: string;
+  }
+
+  interface CcnImgReveal {
+    'fit': string;
+    'height': string;
+    'src': string;
+    'width': string;
+  }
+  interface CcnImgRevealAttributes extends StencilHTMLAttributes {
+    'fit'?: string;
+    'height'?: string;
+    'src'?: string;
+    'width'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
+    'CcnBgVideo': Components.CcnBgVideo;
+    'CcnBouncing': Components.CcnBouncing;
     'CcnButtonSlide': Components.CcnButtonSlide;
+    'CcnDivDeform': Components.CcnDivDeform;
+    'CcnImgReveal': Components.CcnImgReveal;
   }
 
   interface StencilIntrinsicElements {
+    'ccn-bg-video': Components.CcnBgVideoAttributes;
+    'ccn-bouncing': Components.CcnBouncingAttributes;
     'ccn-button-slide': Components.CcnButtonSlideAttributes;
+    'ccn-div-deform': Components.CcnDivDeformAttributes;
+    'ccn-img-reveal': Components.CcnImgRevealAttributes;
   }
 
+
+  interface HTMLCcnBgVideoElement extends Components.CcnBgVideo, HTMLStencilElement {}
+  var HTMLCcnBgVideoElement: {
+    prototype: HTMLCcnBgVideoElement;
+    new (): HTMLCcnBgVideoElement;
+  };
+
+  interface HTMLCcnBouncingElement extends Components.CcnBouncing, HTMLStencilElement {}
+  var HTMLCcnBouncingElement: {
+    prototype: HTMLCcnBouncingElement;
+    new (): HTMLCcnBouncingElement;
+  };
 
   interface HTMLCcnButtonSlideElement extends Components.CcnButtonSlide, HTMLStencilElement {}
   var HTMLCcnButtonSlideElement: {
@@ -36,12 +110,32 @@ declare global {
     new (): HTMLCcnButtonSlideElement;
   };
 
+  interface HTMLCcnDivDeformElement extends Components.CcnDivDeform, HTMLStencilElement {}
+  var HTMLCcnDivDeformElement: {
+    prototype: HTMLCcnDivDeformElement;
+    new (): HTMLCcnDivDeformElement;
+  };
+
+  interface HTMLCcnImgRevealElement extends Components.CcnImgReveal, HTMLStencilElement {}
+  var HTMLCcnImgRevealElement: {
+    prototype: HTMLCcnImgRevealElement;
+    new (): HTMLCcnImgRevealElement;
+  };
+
   interface HTMLElementTagNameMap {
+    'ccn-bg-video': HTMLCcnBgVideoElement
+    'ccn-bouncing': HTMLCcnBouncingElement
     'ccn-button-slide': HTMLCcnButtonSlideElement
+    'ccn-div-deform': HTMLCcnDivDeformElement
+    'ccn-img-reveal': HTMLCcnImgRevealElement
   }
 
   interface ElementTagNameMap {
+    'ccn-bg-video': HTMLCcnBgVideoElement;
+    'ccn-bouncing': HTMLCcnBouncingElement;
     'ccn-button-slide': HTMLCcnButtonSlideElement;
+    'ccn-div-deform': HTMLCcnDivDeformElement;
+    'ccn-img-reveal': HTMLCcnImgRevealElement;
   }
 
 

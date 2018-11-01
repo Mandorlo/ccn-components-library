@@ -1,0 +1,177 @@
+:host {
+    /* --ccn-root-width: 300px;
+    --ccn-root-height: 200px; */
+    /* --ccn-img-fit: cover; */
+    /* --ccn-img-src: url('https://tympanus.net/Tutorials/3DHoverEffects/images/5.jpg'); */
+
+    /* do not modify these by hand ! */
+    /* --ccn-img-width: 300px;
+    --ccn-img-height: 200px;  */
+
+    /* --ccn-slice-step: 60px;
+    --ccn-slice-stepd: 59px;
+    --ccn-slice-step1: 0px;
+    --ccn-slice-step2: -60px;
+    --ccn-slice-step3: -120px;
+    --ccn-slice-step4: -180px;
+    --ccn-slice-step5: -240px;
+
+    --ccn-slice-step-y: 0px; */
+}
+
+.view {
+	/* width: var(--ccn-root-width);
+	height: var(--ccn-root-height); */
+	/*margin: 10px;
+	float: left;
+	position: relative;
+	border: 8px solid #fff;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    background: #333; */
+    background-repeat: no-repeat;
+    background-size: cover;
+	perspective: 800px;
+}
+
+.view div.view-back {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+    z-index: 0;
+	background: linear-gradient(left, #0a0a0a 0%,#666666 100%);
+}
+
+.view .slice{
+	/* width: var(--ccn-slice-step); */
+	height: 100%;
+	z-index: 100;
+	
+	transform-style: preserve-3d;
+	transform-origin: left center;
+	transition: transform 150ms ease-in-out;
+    /* backface-visibility: hidden; */
+    /* backface-visibility: visible; */
+    
+    /* background-image: var(--ccn-img-src); */
+    /* background-size: var(--ccn-img-width) var(--ccn-img-height); */
+    background-repeat: no-repeat;
+}
+
+/* .view .s2, 
+.view .s3, 
+.view .s4, 
+.view .s5 {
+	transform: translate3d(var(--ccn-slice-step),0,0);
+}
+.view .s1 {
+	background-position: var(--ccn-slice-step1) var(--ccn-slice-step-y);
+}
+.view .s2 {
+	background-position: var(--ccn-slice-step2) var(--ccn-slice-step-y);
+}
+.view .s3 {
+	background-position: var(--ccn-slice-step3) var(--ccn-slice-step-y);
+}
+.view .s4 {
+	background-position: var(--ccn-slice-step4) var(--ccn-slice-step-y);
+}
+.view .s5 {
+	background-position: var(--ccn-slice-step5) var(--ccn-slice-step-y);
+} */
+
+.view .overlay {
+	/* width: var(--ccn-slice-step); */
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	transition: opacity 150ms ease-in-out;
+}
+
+.view:hover .overlay {
+	opacity: 1;
+}
+
+.view img {
+	position: absolute;
+	z-index: 0;
+	transition: left 0.3s ease-in-out;
+}
+
+/* .view:hover .s1{
+	transition-delay: 200ms;
+	transform: rotate3d(0,1,0,-3deg);
+}
+.view:hover .s2{
+	transition-delay: 150ms;
+	transform: translate3d(var(--ccn-slice-stepd),0,0) rotate3d(0,1,0,-10deg);
+}
+.view:hover .s3{
+	transition-delay: 100ms;
+	transform: translate3d(var(--ccn-slice-stepd),0,0) rotate3d(0,1,0,-16deg);
+}
+.view:hover .s4{
+	transition-delay: 50ms;
+	transform: translate3d(var(--ccn-slice-stepd),0,0) rotate3d(0,1,0,-30deg);
+}
+.view:hover .s5{
+	transform: translate3d(var(--ccn-slice-step),0,0) rotate3d(0,1,0,-42deg);
+} */
+
+.view .s4 > .overlay {
+	background: linear-gradient(right, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+}
+
+.view .s5 > .overlay {
+	background: linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+}
+
+
+
+/* ======================================= */
+/*           JUST FOR THE DEMO             */
+/* ======================================= */
+
+/* .view-back span {
+	display: block;
+	float: right;
+	padding: 5px 20px 5px;
+	width: 100%;
+	text-align: right;
+	font-size: 16px;
+	color: rgba(255,255,255,0.6);
+}
+
+.view-back span:first-child {
+	padding-top: 20px;
+}
+
+.view-back a {
+	display: bock;
+	font-size: 18px;
+	color: rgba(255,255,255,0.4);
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	border: 2px solid rgba(255,255,255,0.3);
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 22px;
+	text-align: center;
+	font-weight: 700;
+}
+
+.view-back a:hover {
+	color: #fff;
+	border-color: #fff;
+}
+
+.view-back span[data-icon]:before {
+    content: attr(data-icon);
+    font-family: 'icons';
+    color: #aaa;
+	color: rgba(255,255,255,0.2);
+	text-shadow: 0 0 1px rgba(255,255,255,0.2);
+	padding-right: 5px;
+} */
